@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Transactions
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Transactions</h3>
+  <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">  
+    <ion-item [ngClass]="{ 'is-invalid': submitted && f.transactionName.invalid }">
+      <ion-label>Transaction Name</ion-label>
+      <ion-input class="right" required type="text" formControlName="transactionName"></ion-input>
+      <div *ngIf="submitted && f.transactionName.invalid" class="invalid-feedback">
+        <div>* Transaction Name is required</div>
+      </div>
+    </ion-item>
+
+    <ion-item [ngClass]="{ 'is-invalid': submitted && f.transactionDate.invalid }">
+      <ion-label>Transaction Date</ion-label>
+      <ion-datetime formControlName="transactionDate" displayFormat="MMM DD YYYY" pickerFormat="MMM DD YYYY "></ion-datetime>
+      <div *ngIf="submitted && f.transactionDate.invalid" class="invalid-feedback">
+        <div>* Transaction date is required</div>
+      </div>
+    </ion-item>
+
+    <ion-item [ngClass]="{ 'is-invalid': submitted && f.transactionType.invalid }">
+      <ion-label>Transaction Type</ion-label>
+      <ion-select required formControlName="transactionType" (ionChange)="typeChange($event.target.value)">
+        <ion-select-option *ngFor="let type of TRANSACTIONS_TYPE" [value]="type.key">{{type.value}}</ion-select-option>
+      </ion-select>
+      <div *ngIf="submitted && f.transactionType.invalid" class="invalid-feedback">
+        <div>* Transaction Type is required</div>
+      </div>
+    </ion-item>
+
+    <ion-item [ngClass]="{ 'is-invalid': submitted && f.transactionDescription.invalid }">
+      <ion-label>Transaction Description</ion-label>
+      <ion-input required class="right" type="text" formControlName="transactionDescription"></ion-input>      
+      <div *ngIf="submitted && f.transactionDescription.invalid" class="invalid-feedback">
+        <div>* Transaction Description is required</div>
+      </div>
+    </ion-item>
+
+    <ion-item *ngIf="CATEGORY.length > 0" [ngClass]="{ 'is-invalid': submitted && f.transactionCategory.invalid }">
+      <ion-label>Transaction Category</ion-label>
+      <ion-select required formControlName="transactionCategory">
+        <ion-select-option *ngFor="let category of CATEGORY" [value]="category.key">{{category.value}}</ion-select-option>
+      </ion-select>
+      <div *ngIf="submitted && f.transactionCategory.invalid" class="invalid-feedback">
+        <div>* Transaction Category is required</div>
+      </div>
+    </ion-item>
+
+    <ion-item [ngClass]="{ 'is-invalid': submitted && f.transactionAmount.invalid }">
+      <ion-label>Transaction Amount</ion-label>
+      <ion-input class="right" required type="text" formControlName="transactionAmount"></ion-input>      
+      <div *ngIf="submitted && f.transactionAmount.invalid" class="invalid-feedback">
+        <div>* Transaction Amount is required</div>
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Transaction Notes</ion-label>
+      <ion-input class="right" type="text" formControlName="transactionNotes"></ion-input>
+    </ion-item>
+
+    <ion-row style="margin-top:20px">
+      <ion-button type="submit" color="primary">Submit</ion-button>
+    </ion-row>
+  </form>
+</ion-content>

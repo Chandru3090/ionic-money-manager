@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Dashboard
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="navigate('transactions')">
+          <ion-icon name="add"></ion-icon>Transacions
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="navigate('viewby-category')">
+          <ion-icon name="funnel"></ion-icon>View by category
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="navigate('viewby-monthly')">
+          <ion-icon name="funnel"></ion-icon>View by monthly
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="navigate('viewby-yearly')">
+          <ion-icon name="funnel"></ion-icon>View by yearly
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-card class="header-card">
+            <ion-card-header class="border-card-header" text-center>
+              <h3>Income</h3>
+            </ion-card-header>
+            <ion-card-content class="reset-padding-card" text-center>
+              <h1>{{INCOME | currency: 'INR':true }}</h1>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-card class="header-card">
+            <ion-card-header class="border-card-header" text-center>
+              <h3>Expense</h3>
+            </ion-card-header>
+            <ion-card-content class="reset-padding-card" text-center>
+              <h1>{{EXPENSE | currency: 'INR':true }}</h1>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-card class="header-card">
+            <ion-card-header class="border-card-header" text-center>
+              <h3>Savings</h3>
+            </ion-card-header>
+            <ion-card-content class="reset-padding-card" text-center>
+              <h1>{{(INCOME - EXPENSE) | currency: 'INR':true }}</h1>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card *ngFor="let transaction of transactions">
+    <ion-card-header class="border-card-header">
+      <h3>{{transaction.transactionDate | date: 'longDate'}}</h3>
+      <p>{{transaction.transactionName}} <ion-badge color="{{transaction.transactionType==='INCOME' ? 'primary' : 'danger'}}">{{transaction.transactionType}}</ion-badge>  <ion-badge color="{{transaction.transactionType==='INCOME' ? 'primary' : 'danger'}}">{{transaction.transactionCategory}}</ion-badge>
+      </p>
+      <div class="header-right-top-icons">
+        <button primary large>
+          <ion-icon name="create"></ion-icon>
+        </button>
+        <button primary large (click)="deleteTransaction(transaction.id)">
+          <ion-icon name="remove-circle"></ion-icon>
+        </button>
+      </div>
+    </ion-card-header>
+    <ion-card-content class="reset-padding-card">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div>
+              {{transaction.transactionDescription}}
+            </div>
+          </ion-col>
+          <ion-col class="right">
+            <div>
+              <h2>{{transaction.transactionAmount | currency: 'INR':true}}</h2>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,181 @@
+{
+  "transactions": [
+    {
+      "transactionName": "November Month Salary",
+      "transactionDate": "2018-12-01",
+      "transactionType": "INCOME",
+      "transactionDescription": "November Month Salary",
+      "transactionCategory": "Salary",
+      "transactionAmount": "59375",
+      "transactionNotes": "",
+      "trasactionId": 197737392,
+      "id": 1
+    },
+    {
+      "transactionName": "Sweets and Snacks for marie home",
+      "transactionDate": "2018-12-01",
+      "transactionType": "EXPENSE",
+      "transactionDescription": "Sweets and Snacks for marie home",
+      "transactionCategory": "FOOD ",
+      "transactionAmount": "525",
+      "transactionNotes": "",
+      "trasactionId": 566849783,
+      "id": 2
+    },
+    {
+      "transactionName": "Ice Cream",
+      "transactionDate": "2018-12-01",
+      "transactionType": "EXPENSE",
+      "transactionDescription": "Ice Cream for marie home",
+      "transactionCategory": "FOOD ",
+      "transactionAmount": "340",
+      "transactionNotes": "",
+      "trasactionId": 116117693,
+      "id": 3
+    },
+    {
+      "transactionName": "Education Loan",
+      "transactionDate": "2018-12-01",
+      "transactionType": "EXPENSE",
+      "transactionDescription": "Education Loan",
+      "transactionCategory": "EDUCATION LOAN ",
+      "transactionAmount": "8000",
+      "transactionNotes": "",
+      "trasactionId": 644608678,
+      "id": 4
+    },
+    {
+      "transactionName": "FD Loan Due",
+      "transactionDate": "2018-12-03",
+      "transactionType": "EXPENSE",
+      "transactionDescription": "Fixed Deposit",
+      "transactionCategory": "DEPOSITE LOAN ",
+      "transactionAmount": "5000",
+      "transactionNotes": "",
+      "trasactionId": 561656450,
+      "id": 5
+    },
+    {
+      "transactionName": "Home Expense",
+      "transactionDate": "2018-12-02",
+      "transactionType": "EXPENSE",
+      "transactionDescription": "monthly home expense to mom",
+      "transactionCategory": "HOME",
+      "transactionAmount": "5000",
+      "transactionNotes": "",
+      "trasactionId": 935336408,
+      "id": 6
+    },
+    {
+      "transactionName": "Savings for Appa",
+      "transactionDate": "2018-12-03",
+      "transactionType": "EXPENSE",
+      "transactionDescription": "monthly savings to appa account",
+      "transactionCategory": "SAVINGS",
+      "transactionAmount": "5000",
+      "transactionNotes": "",
+      "trasactionId": 501253550,
+      "id": 7
+    },
+    {
+      "transactionName": "ATM Withdraw self use",
+      "transactionDate": "2018-12-02",
+      "transactionType": "EXPENSE",
+      "transactionDescription": "ATM Withdraw self use",
+      "transactionCategory": "OTHER EXPENSE",
+      "transactionAmount": "1000",
+      "transactionNotes": "",
+      "trasactionId": 358625607,
+      "id": 8
+    },
+    {
+      "transactionName": "Room Rent Coimbatore",
+      "transactionDate": "2018-12-05",
+      "transactionType": "EXPENSE",
+      "transactionDescription": "Room Rent Coimbatore",
+      "transactionCategory": "OTHER EXPENSE",
+      "transactionAmount": "1250",
+      "transactionNotes": "",
+      "trasactionId": 717956975,
+      "id": 9
+    }
+  ],
+  "incomeCategories": [
+    {
+      "name": "AWARDS",
+      "value": "Awards",
+      "categoryId": ""
+    },
+    {
+      "name": "GIFTS ",
+      "value": "Gifts",
+      "categoryId": ""
+    },
+    {
+      "name": "INTEREST ",
+      "value": "Interest Money",
+      "categoryId": ""
+    },
+    {
+      "name": "SALARY ",
+      "value": "Salary",
+      "categoryId": ""
+    },
+    {
+      "name": "SELLING ",
+      "value": "Selling",
+      "categoryId": ""
+    },
+    {
+      "name": "OHERS ",
+      "value": "Others",
+      "categoryId": ""
+    }
+  ],
+  "expenseCategories": [
+    {
+      "key": "HOME",
+      "value": "Home Expense",
+      "categoryId": ""
+    },
+    {
+      "key": "FOOD ",
+      "value": "Food Expense",
+      "categoryId": ""
+    },
+    {
+      "key": "FRIENDS ",
+      "value": "Friends",
+      "categoryId": ""
+    },
+    {
+      "key": "EDUCATION LOAN ",
+      "value": "Education Loan"
+    },
+    {
+      "key": "BIKE LOAN ",
+      "value": "Bike Loan",
+      "categoryId": ""
+    },
+    {
+      "key": "DEPOSITE LOAN ",
+      "value": "Deposite Loan",
+      "categoryId": ""
+    },
+    {
+      "key": "SAVINGS",
+      "value": "Savings for Family",
+      "categoryId": ""
+    },
+    {
+      "key": "OTHER INCOME",
+      "value": "Other Income",
+      "categoryId": ""
+    },
+    {
+      "key": "OTHER EXPENSE",
+      "value": "Other Expense",
+      "categoryId": ""
+    }
+  ]
+}

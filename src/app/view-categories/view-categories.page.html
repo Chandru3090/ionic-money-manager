@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>View Caegories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngIf="incomeCategories.length > 0">
+      INCOME
+      <ion-list>
+        <ng-container *ngFor="let category of incomeCategories">
+          <ion-item>{{category.value}}</ion-item>
+        </ng-container>
+      </ion-list>
+    </ion-item>
+    <ion-item *ngIf="expenseCategories.length > 0">
+      EXPENSE
+      <ion-list>
+        <ng-container *ngFor="let category of expenseCategories">
+          <ion-item>{{category.value}}</ion-item>
+        </ng-container>
+      </ion-list>
+    </ion-item>
+  </ion-list>
+</ion-content>

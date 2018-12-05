@@ -16,7 +16,11 @@ const routes: Routes = [
     loadChildren: './transactions/transactions.module#TransactionsPageModule'
   },
   { path: 'viewby-category', loadChildren: './viewby-category/viewby-category.module#ViewbyCategoryPageModule' },
-  { path: 'budget', loadChildren: './budget/budget.module#BudgetPageModule' }
+  { path: 'budget', loadChildren: './budget/budget.module#BudgetPageModule' },
+  { path: 'category', loadChildren: './category/category.module#CategoryPageModule' },
+  { path: 'view-categories', loadChildren: './view-categories/view-categories.module#ViewCategoriesPageModule' },
+  { path: 'view-transactionby-yearly', loadChildren: './view-transactionby-yearly/view-transactionby-yearly.module#ViewTransactionbyYearlyPageModule' },
+  { path: 'view-transactionby-monthly', loadChildren: './view-transactionby-monthly/view-transactionby-monthly.module#ViewTransactionbyMonthlyPageModule' }
 ];
 
 @NgModule({

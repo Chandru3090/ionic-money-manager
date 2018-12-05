@@ -26,10 +26,31 @@ export class AppComponent {
       icon: 'list'
     },
     {
+      title: 'View by Monthly',
+      url: '/view-transactionby-monthly',
+      icon: 'list'
+    },
+    {
+      title: 'View by Yearly',
+      url: '/view-transactionby-yearly',
+      icon: 'list'
+    },
+    {
+      title: 'View Categories',
+      url: '/view-categories',
+      icon: 'cube'
+    },
+    {
+      title: 'Add Categories',
+      url: '/category',
+      icon: 'cube'
+    },
+    {
       title: 'Budget',
       url: '/budget',
       icon: 'cube'
     }
+
   ];
 
   constructor(

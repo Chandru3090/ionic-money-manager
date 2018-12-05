@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Categories
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Categories</h3>
+  <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">  
+
+    <ion-item [ngClass]="{ 'is-invalid': submitted && f.categoryType.invalid }">
+      <ion-label>Category Type</ion-label>
+      <ion-select required formControlName="categoryType">
+        <ion-select-option *ngFor="let type of CATEGORY_TYPE" [value]="type.key">{{type.value}}</ion-select-option>
+      </ion-select>
+      <div *ngIf="submitted && f.categoryType.invalid" class="invalid-feedback">
+        <div>* Category Type is required</div>
+      </div>
+    </ion-item> 
+
+    <ion-item [ngClass]="{ 'is-invalid': submitted && f.categoryName.invalid }">
+      <ion-label>Transaction Description</ion-label>
+      <ion-input required class="right" type="text" formControlName="categoryName"></ion-input>      
+      <div *ngIf="submitted && f.categoryName.invalid" class="invalid-feedback">
+        <div>* Category Name is required</div>
+      </div>
+    </ion-item>
+  
+    <ion-row style="margin-top:20px">
+      <ion-button type="submit" color="primary">Submit</ion-button>
+    </ion-row>
+  </form>
+</ion-content>

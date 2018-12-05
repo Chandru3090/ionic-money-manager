@@ -1,0 +1,50 @@
+
+.right {
+    text-align: right;
+}
+.border-card-header {
+    padding: 10px 10px 5px 10px;
+    border-bottom: 1px solid #dddddd; 
+}
+.border-card-header h3 {
+    margin:0px;
+    padding-bottom: 5px;
+}
+.border-card-header p {
+    margin:0px;
+}
+.reset-padding-card {
+    padding:10px;
+}
+.reset-padding-card ion-col {
+    padding-left:0px;
+    padding-right:0px;
+}
+.reset-padding-card ion-row ion-col:last-child h2 {
+    font-weight: bold;
+    font-size: 16px;
+}
+.full-width {
+    width:100%;
+}
+.header-card {
+    margin-left:0px;
+    margin-right:0px;
+}
+.header-right-top-icons {
+    position: absolute;
+    top:0;
+    right:0;
+}
+.header-right-top-icons ion-icon {
+    padding:5px;
+}
+ion-button ion-icon {
+    margin-right:5px;
+}
+div.table .table-header {
+    border-bottom: 1px solid #dddddd;
+} 
+p ion-badge {
+    margin-right:10px;
+}

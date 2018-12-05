@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      View by category
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="doughnutChart && doughnutChart.data">
+    <canvas baseChart [data]="doughnutChart?.data" [labels]="doughnutChart?.labels" [chartType]="doughnutChart?.type"
+      (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)" [options]="doughnutChart?.options"></canvas>
+  </div>
+  <div *ngIf="categoryData.length">
+    <div class="table">
+      <div class="table-header">
+        <ion-row>
+          <ion-col>
+            Category
+          </ion-col>
+          <ion-col>
+            Amount spend
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="table-body">
+        <ion-row *ngFor="let category of categoryData">
+          <ion-col [ngClass]="{'highlight':category.highlight}">
+            {{category.transactionCategory}}
+          </ion-col>
+          <ion-col [ngClass]="{'highlight':category.highlight}">
+            {{category.transactionAmount | currency: 'INR':true}}
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+    <div text-right class="total">
+      {{overAllcategoryTotalAmount | currency: 'INR':true }}
+    </div>
+  </div>
+  <div *ngIf="categoryDetails.length">
+    <div class="table">
+      <div class="table-header">
+        <ion-row>
+          <ion-col>Transaction Number</ion-col>
+          <ion-col>Transaction Name</ion-col>
+          <ion-col>Transaction Date</ion-col>
+          <ion-col>Transaction Description</ion-col>
+          <ion-col>Transaction Amount</ion-col>
+        </ion-row>
+      </div>
+      <div class="table-body">
+        <ion-row *ngFor="let data of categoryDetails">
+          <ion-col>
+            {{data.trasactionId}}
+          </ion-col>
+          <ion-col>
+            {{data.transactionName}}
+          </ion-col>
+          <ion-col>
+            {{data.transactionDate | date: 'longDate'}}
+          </ion-col>
+          <ion-col>
+            {{data.transactionDescription}}
+          </ion-col>
+          <ion-col>
+            {{data.transactionAmount | currency: 'INR':true}}
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+    <div text-right class="total">
+      {{categoryTotalAmount | currency: 'INR':true }}
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,6 @@
+{
+    "/transactions": {
+      "target": "http://localhost:8101",
+      "secure": false
+    }
+}

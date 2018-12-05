@@ -40,7 +40,7 @@
                 "input": "src/global.scss"
               }
             ],
-            "scripts": []
+            "scripts": ["node_modules/chart.js/dist/Chart.bundle.js"]
           },
           "configurations": {
             "production": {
