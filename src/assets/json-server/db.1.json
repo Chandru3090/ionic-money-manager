@@ -2,7 +2,7 @@
   "transactions": [
     {
       "transactionName": "November Month Salary",
-      "transactionDate": "2018-11-01",
+      "transactionDate": "2018-12-01",
       "transactionType": "INCOME",
       "transactionDescription": "November Month Salary",
       "transactionCategory": "Salary",
@@ -13,7 +13,7 @@
     },
     {
       "transactionName": "Sweets and Snacks for marie home",
-      "transactionDate": "2018-11-01",
+      "transactionDate": "2018-12-01",
       "transactionType": "EXPENSE",
       "transactionDescription": "Sweets and Snacks for marie home",
       "transactionCategory": "FOOD ",
@@ -24,7 +24,7 @@
     },
     {
       "transactionName": "Ice Cream",
-      "transactionDate": "2018-10-01",
+      "transactionDate": "2018-12-01",
       "transactionType": "EXPENSE",
       "transactionDescription": "Ice Cream for marie home",
       "transactionCategory": "FOOD ",
@@ -34,147 +34,70 @@
       "id": 3
     },
     {
-      "transactionName": "November Month Salary",
-      "transactionDate": "2018-10-01",
-      "transactionType": "INCOME",
-      "transactionDescription": "November Month Salary",
-      "transactionCategory": "Salary",
-      "transactionAmount": "59375",
-      "transactionNotes": "",
-      "trasactionId": 197737392,
-      "id": 4
-    },
-    {
       "transactionName": "Education Loan",
-      "transactionDate": "2018-09-01",
+      "transactionDate": "2018-12-01",
       "transactionType": "EXPENSE",
       "transactionDescription": "Education Loan",
       "transactionCategory": "EDUCATION LOAN ",
       "transactionAmount": "8000",
       "transactionNotes": "",
       "trasactionId": 644608678,
-      "id": 5
-    },
-    {
-      "transactionName": "November Month Salary",
-      "transactionDate": "2018-09-01",
-      "transactionType": "INCOME",
-      "transactionDescription": "November Month Salary",
-      "transactionCategory": "Salary",
-      "transactionAmount": "59375",
-      "transactionNotes": "",
-      "trasactionId": 197737392,
-      "id": 6
+      "id": 4
     },
     {
       "transactionName": "FD Loan Due",
-      "transactionDate": "2018-08-03",
+      "transactionDate": "2018-12-03",
       "transactionType": "EXPENSE",
       "transactionDescription": "Fixed Deposit",
       "transactionCategory": "DEPOSITE LOAN ",
       "transactionAmount": "5000",
       "transactionNotes": "",
       "trasactionId": 561656450,
-      "id": 7
-    },
-    {
-      "transactionName": "November Month Salary",
-      "transactionDate": "2018-08-01",
-      "transactionType": "INCOME",
-      "transactionDescription": "November Month Salary",
-      "transactionCategory": "Salary",
-      "transactionAmount": "59375",
-      "transactionNotes": "",
-      "trasactionId": 197737392,
-      "id": 8
+      "id": 5
     },
     {
       "transactionName": "Home Expense",
-      "transactionDate": "2018-07-02",
+      "transactionDate": "2018-12-02",
       "transactionType": "EXPENSE",
       "transactionDescription": "monthly home expense to mom",
       "transactionCategory": "HOME",
       "transactionAmount": "5000",
       "transactionNotes": "",
       "trasactionId": 935336408,
-      "id": 9
-    },
-    {
-      "transactionName": "November Month Salary",
-      "transactionDate": "2018-07-01",
-      "transactionType": "INCOME",
-      "transactionDescription": "November Month Salary",
-      "transactionCategory": "Salary",
-      "transactionAmount": "59375",
-      "transactionNotes": "",
-      "trasactionId": 197737392,
-      "id": 10
+      "id": 6
     },
     {
       "transactionName": "Savings for Appa",
-      "transactionDate": "2018-06-03",
+      "transactionDate": "2018-12-03",
       "transactionType": "EXPENSE",
       "transactionDescription": "monthly savings to appa account",
       "transactionCategory": "SAVINGS",
       "transactionAmount": "5000",
       "transactionNotes": "",
       "trasactionId": 501253550,
-      "id":11
-    },
-    {
-      "transactionName": "November Month Salary",
-      "transactionDate": "2018-06-01",
-      "transactionType": "INCOME",
-      "transactionDescription": "November Month Salary",
-      "transactionCategory": "Salary",
-      "transactionAmount": "59375",
-      "transactionNotes": "",
-      "trasactionId": 197737392,
-      "id": 12
+      "id": 7
     },
     {
       "transactionName": "ATM Withdraw self use",
-      "transactionDate": "2018-05-02",
+      "transactionDate": "2018-12-02",
       "transactionType": "EXPENSE",
       "transactionDescription": "ATM Withdraw self use",
       "transactionCategory": "OTHER EXPENSE",
       "transactionAmount": "1000",
       "transactionNotes": "",
       "trasactionId": 358625607,
-      "id": 13
-    },
-    {
-      "transactionName": "November Month Salary",
-      "transactionDate": "2018-05-01",
-      "transactionType": "INCOME",
-      "transactionDescription": "November Month Salary",
-      "transactionCategory": "Salary",
-      "transactionAmount": "59375",
-      "transactionNotes": "",
-      "trasactionId": 197737392,
-      "id": 14
+      "id": 8
     },
     {
       "transactionName": "Room Rent Coimbatore",
-      "transactionDate": "2018-04-05",
+      "transactionDate": "2018-12-05",
       "transactionType": "EXPENSE",
       "transactionDescription": "Room Rent Coimbatore",
       "transactionCategory": "OTHER EXPENSE",
       "transactionAmount": "1250",
       "transactionNotes": "",
       "trasactionId": 717956975,
-      "id": 15
-    },
-    {
-      "transactionName": "November Month Salary",
-      "transactionDate": "2018-04-01",
-      "transactionType": "INCOME",
-      "transactionDescription": "November Month Salary",
-      "transactionCategory": "Salary",
-      "transactionAmount": "59375",
-      "transactionNotes": "",
-      "trasactionId": 197737392,
-      "id": 16
+      "id": 9
     }
   ],
   "incomeCategories": [

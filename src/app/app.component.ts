@@ -31,11 +31,6 @@ export class AppComponent {
       icon: 'list'
     },
     {
-      title: 'View by Yearly',
-      url: '/view-transactionby-yearly',
-      icon: 'list'
-    },
-    {
       title: 'View Categories',
       url: '/view-categories',
       icon: 'cube'
