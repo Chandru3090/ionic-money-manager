@@ -60,7 +60,7 @@
       </ion-col>
       <ion-col>
         <div>
-          <ion-card class="header-card">
+          <ion-card class="header-card" [ngClass]="{ 'danger': (INCOME-EXPENSE) < 5000 }">
             <ion-card-header class="border-card-header" text-center>
               <h3>Savings</h3>
             </ion-card-header>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { TRANSACTION_TYPE, TRANSACTION_INCOME_CATEGORY, TRANSACTION_EXPENSE_CATEGORY } from '../constants/index';
+import { TRANSACTION_TYPE } from '../constants/index';
 import { Router } from '@angular/router';
 import {
   ServiceService

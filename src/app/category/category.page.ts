@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { TRANSACTION_TYPE, TRANSACTION_INCOME_CATEGORY, TRANSACTION_EXPENSE_CATEGORY } from '../constants/index';
+import { TRANSACTION_TYPE } from '../constants/index';
 import { Router } from '@angular/router';
 import {
   ServiceService
@@ -32,9 +32,10 @@ export class CategoryPage implements OnInit {
     this.submitted = true;
     if (this.categoryForm.valid) {
       const formData:any ={};
-      formData.key = this.categoryForm.value.categoryType.toUpperCase().trim();
-      formData.value = this.categoryForm.value.categoryType;
+      formData.key = this.categoryForm.value.categoryName.toUpperCase().trim();
+      formData.value = this.categoryForm.value.categoryName;
       formData.categoryId = this.service.randomNuberTrigger();
+      formData.categoryType = this.categoryForm.value.categoryType;
       this.service.submitCategories(formData).subscribe(data => console.log(data));
       this.router.navigate(['../']);
     }

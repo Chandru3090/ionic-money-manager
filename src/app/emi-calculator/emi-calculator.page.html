@@ -1,0 +1,113 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>EMI Calculator</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="loanCalculatorForm" (ngSubmit)="onSubmit()">
+    <ion-item [ngClass]="{ 'is-invalid': submitted && f.loanAmount.invalid }">
+      <ion-label>Loan Amount <ion-badge class="bold">{{f.loanAmount.value | currency:
+          'INR':true}}</ion-badge>
+      </ion-label>
+      <ion-col>
+        <ion-label>{{'100000' | currency: 'INR':true}}</ion-label>
+        <ion-range min="100000" max="10000000" step="100000" formControlName="loanAmount"></ion-range>
+        <ion-label>{{'10000000' | currency: 'INR':true}}</ion-label>
+        <ion-label></ion-label>
+      </ion-col>
+    </ion-item>
+
+    <ion-item [ngClass]="{ 'is-invalid': submitted && f.rateofInterest.invalid }">
+      <ion-label>Rate of Interest</ion-label>
+      <ion-input class="right" formControlName="rateofInterest" type="text" required></ion-input>
+      <div *ngIf="submitted && f.rateofInterest.invalid" class="invalid-feedback">
+        <div>* Rate of Interest is required</div>
+      </div>
+    </ion-item>
+
+    <ion-item [ngClass]="{ 'is-invalid': submitted && f.loanTendure.invalid }">
+      <ion-label>Loan Tendure In Years <ion-badge class="bold">{{f.loanTendure.value}}
+          Year(s)</ion-badge>
+      </ion-label>
+      <ion-col>
+        <ion-label>{{'1 Year' }}</ion-label>
+        <ion-label>
+          <ion-range min="1" max="20" step="1" formControlName="loanTendure"></ion-range>
+        </ion-label>
+        <ion-label>
+          {{'20 Years'}}
+        </ion-label>
+      </ion-col>
+    </ion-item>
+    <ion-row style="margin-top:20px">
+      <ion-button type="submit" color="primary">Submit</ion-button>
+    </ion-row>
+  </form>
+  <ion-card class="remove-left-right-margin" *ngIf="emiResults?.totalinterest && emiResults?.totalPayment && emiResults?.monthlyPayment">
+    <ion-card-header>
+      <ion-row>
+        <ion-col>
+          <h4 class="margin-zero">Loan Amount:</h4>
+        </ion-col>
+        <ion-col class="right">
+          <h4 class="margin-zero">{{loanCalculatorForm.controls.loanAmount.value | currency: 'INR':true}}</h4>
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-header>
+      <ion-row>
+        <ion-col>
+          <h4 class="margin-zero">Rate of Interest:</h4>
+        </ion-col>
+        <ion-col class="right">
+          <h4 class="margin-zero">{{loanCalculatorForm.controls.rateofInterest.value}} %</h4>
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-header>
+      <ion-row>
+        <ion-col>
+          <h4 class="margin-zero">Loan Tendure:</h4>
+        </ion-col>
+        <ion-col class="right">
+          <h4 class="margin-zero">{{loanCalculatorForm.controls.loanTendure.value}} Year(s)</h4>
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-header>
+      <ion-row>
+        <ion-col>
+          <h4 class="margin-zero">EMI (per month):</h4>
+        </ion-col>
+        <ion-col class="right">
+          <h4 class="margin-zero">{{ emiResults.monthlyPayment | currency: 'INR':true}} </h4>
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-header>
+      <ion-row>
+        <ion-col>
+          <h4 class="margin-zero">Total Payment:</h4>
+        </ion-col>
+        <ion-col class="right">
+          <h4 class="margin-zero">{{ emiResults.totalPayment | currency: 'INR':true}}</h4>
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-header>
+      <ion-row>
+        <ion-col>
+          <h4 class="margin-zero">Total Interest:</h4>
+        </ion-col>
+        <ion-col class="right">
+          <h4 class="margin-zero">{{ emiResults.totalinterest | currency: 'INR':true}}</h4>
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+  </ion-card>
+
+</ion-content>

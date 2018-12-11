@@ -8,8 +8,70 @@
 </ion-header>
 
 <ion-content padding>
-  <div style="display: block;">
-    <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [legend]="lineChartLegend"
-      [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+  <div *ngIf="chartData.length > 0 && chartLabels.length > 0">
+    <canvas baseChart [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions" [legend]="chartLegend"
+      [chartType]="chartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    <ion-button style="text-transform: capitalize" (click)="toggleChart()">{{( chartType==='line') ? 'bar' :
+      'line'}}</ion-button>
   </div>
-</ion-content>
+  <ion-row>
+    <ion-col>
+      <div *ngIf="incomeGroupedTransacions.length">
+        <div class="table">
+          <div class="table-header">
+            <ion-row>
+              <ion-col>
+                Years
+              </ion-col>
+              <ion-col>
+                Amount Income
+              </ion-col>
+            </ion-row>
+          </div>
+          <div class="table-body">
+            <ion-row *ngFor="let transaction of incomeGroupedTransacions">
+              <ion-col [ngClass]="{'highlight':transaction.highlight}">
+                {{transaction.year}}
+              </ion-col>
+              <ion-col [ngClass]="{'highlight':transaction.highlight}">
+                {{transaction.amount | currency: 'INR':true}}
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
+        <div text-right class="total">
+          {{overallIncomeTransactionAmount | currency: 'INR':true }}
+        </div>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div *ngIf="expenseGroupedTransacions.length">
+        <div class="table">
+          <div class="table-header">
+            <ion-row>
+              <ion-col>
+                Years
+              </ion-col>
+              <ion-col>
+                Amount Spent
+              </ion-col>
+            </ion-row>
+          </div>
+          <div class="table-body">
+            <ion-row *ngFor="let transaction of expenseGroupedTransacions">
+              <ion-col [ngClass]="{'highlight':transaction.highlight}">
+                {{transaction.year}}
+              </ion-col>
+              <ion-col [ngClass]="{'highlight':transaction.highlight}">
+                {{transaction.amount | currency: 'INR':true}}
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
+        <div text-right class="total">
+          {{overallExpenseTransactionAmount | currency: 'INR':true }}
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-content>    

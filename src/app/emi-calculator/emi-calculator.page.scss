@@ -1,0 +1,23 @@
+.right {
+    text-align:right;
+}
+.bold {
+    font-weight:bold;
+}
+.margin-zero {
+    margin:0px;
+}
+ion-card-header ion-row{
+    border-bottom: 1px solid #dddddd; 
+}
+ion-card-header:last-child ion-row {
+    border:none;
+}
+
+.invalid-feedback {
+    color:red;
+}
+.remove-left-right-margin {
+    margin-left:0px;
+    margin-right:0px;
+}

@@ -8,10 +8,10 @@
 </ion-header>
 
 <ion-content padding>
-  <div *ngIf="lineChartData.length > 0 && lineChartLabels.length > 0">
-    <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [legend]="lineChartLegend"
-      [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
-    <ion-button style="text-transform: capitalize" (click)="toggleChart()">{{( lineChartType==='line') ? 'bar' :
+  <div *ngIf="chartData.length > 0 && chartLabels.length > 0">
+    <canvas baseChart [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions" [legend]="chartLegend"
+      [chartType]="chartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    <ion-button style="text-transform: capitalize" (click)="toggleChart()">{{( chartType==='line') ? 'bar' :
       'line'}}</ion-button>
   </div>
   <ion-row>
@@ -66,6 +66,52 @@
                 {{transaction.amount | currency: 'INR':true}}
               </ion-col>
             </ion-row>
+          </div>
+        </div>
+        <div text-right class="total">
+          {{overallExpenseTransactionAmount | currency: 'INR':true }}
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <div *ngIf="expenseAllTrack?.length">
+        <div class="table">
+          <div class="table-header">
+            <ion-row>
+              <ion-col>Transaction Number</ion-col>
+              <ion-col>Transaction Name</ion-col>
+              <ion-col>Transaction Date</ion-col>
+              <ion-col>Transaction category</ion-col>
+              <ion-col>Transaction Amount</ion-col>
+            </ion-row>
+          </div>
+          <div class="table-body">
+            <ng-container *ngFor="let transactions of expenseAllTrack">
+              <ion-row>
+                <ion-col class="left bold">
+                  {{transactions.key}}
+                </ion-col>
+              </ion-row>
+              <ion-row *ngFor="let values of transactions.value">
+                <ion-col>
+                  {{values.trasactionId}}
+                </ion-col>
+                <ion-col>
+                  {{values.transactionName}}
+                </ion-col>
+                <ion-col>
+                  {{values.transactionDate | date: 'longDate'}}
+                </ion-col>
+                <ion-col>
+                  {{values.transactionCategory}}
+                </ion-col>
+                <ion-col>
+                  {{values.transactionAmount | currency: 'INR':true}}
+                </ion-col>
+              </ion-row>
+            </ng-container>
           </div>
         </div>
         <div text-right class="total">

@@ -31,6 +31,11 @@ export class AppComponent {
       icon: 'list'
     },
     {
+      title: 'View by Yearly',
+      url: '/view-transactionby-yearly',
+      icon: 'list'
+    },
+    {
       title: 'View Categories',
       url: '/view-categories',
       icon: 'cube'
@@ -38,6 +43,16 @@ export class AppComponent {
     {
       title: 'Add Categories',
       url: '/category',
+      icon: 'cube'
+    },
+    {
+      title: 'EMI Calculator',
+      url: '/emi-calculator',
+      icon: 'cube'
+    },
+    {
+      title: 'Loan Tracker',
+      url: '/loan-tracker',
       icon: 'cube'
     },
     {

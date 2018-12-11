@@ -24,7 +24,7 @@
     </ion-item> 
 
     <ion-item [ngClass]="{ 'is-invalid': submitted && f.categoryName.invalid }">
-      <ion-label>Transaction Description</ion-label>
+      <ion-label>Category Name</ion-label>
       <ion-input required class="right" type="text" formControlName="categoryName"></ion-input>      
       <div *ngIf="submitted && f.categoryName.invalid" class="invalid-feedback">
         <div>* Category Name is required</div>

@@ -9,19 +9,19 @@ import * as moment from 'moment';
 })
 export class ViewTransactionbyMonthlyPage implements OnInit {
 
-  lineChartData: any = [];
-  lineChartLabels: any = [];
-  lineChartOptions: any = {
+  chartData: any = [];
+  chartLabels: any = [];
+  chartOptions: any = {
     responsive: true
   };
-  lineChartLegend: boolean = true;
-  lineChartType: string = 'bar';
+  chartLegend: boolean = true;
+  chartType: string = 'bar';
   allTransactions: any = [];
   expenseGroupedTransacions: any = [];
   incomeGroupedTransacions: any = [];
   overallExpenseTransactionAmount: number = 0;
   overallIncomeTransactionAmount: number = 0;
-
+  expenseAllTrack: any[];
   constructor(private service: ServiceService) { }
 
   ngOnInit() {
@@ -32,32 +32,23 @@ export class ViewTransactionbyMonthlyPage implements OnInit {
       this.allTransactions.map(x => {
         if (x.transactionType === 'EXPENSE') {
           const date = moment(new Date(x.transactionDate));
-          x.transactionMonth = date.format('MMMM');
+          x.transactionMonth = date.format('MMMM-YYYY');
           expenseDatas.push(x);
         } else if (x.transactionType === 'INCOME') {
           const date = moment(new Date(x.transactionDate));
-          x.transactionMonth = date.format('MMMM');
+          x.transactionMonth = date.format('MMMM-YYYY');
           incomeDatas.push(x);
         }
       });
       const expenseGroupedTrans = this.groupBy(expenseDatas, 'transactionMonth');
+      this.expenseAllTrack = Object.keys(expenseGroupedTrans).map(x => { return { key: x, value: expenseGroupedTrans[x] } });
       const incoeGroupedTrans = this.groupBy(incomeDatas, 'transactionMonth');
 
-      /* const _newThis = this;
-       Object.keys(expenseGroupedTrans).forEach(function (key) {
-        const obj: any = {};
-        obj.month = key;
-        let initialValue = 0;
-        obj.amount = expenseGroupedTrans[key].reduce(
-          (accumulator, currentValue) => accumulator + Number(currentValue.transactionAmount), initialValue
-        );
-        _newThis.groupedTransacions.push(obj);
-      }); */
       this.expenseGroupedTransacions = this.groupMapping(expenseGroupedTrans);
       this.incomeGroupedTransacions = this.groupMapping(incoeGroupedTrans);
 
-      this.lineChartData.push({ data: this.incomeExpenseGroupDataFrame(this.incomeGroupedTransacions, 'INCOME'), label: new Date().getFullYear().toString() + ' INCOME' });
-      this.lineChartData.push({ data: this.incomeExpenseGroupDataFrame(this.expenseGroupedTransacions, 'EXPENSE'), label: new Date().getFullYear().toString() + ' EXPENSE' });
+      this.chartData.push({ data: this.incomeExpenseGroupDataFrame(this.incomeGroupedTransacions, 'INCOME'), label: new Date().getFullYear().toString() + ' INCOME' });
+      this.chartData.push({ data: this.incomeExpenseGroupDataFrame(this.expenseGroupedTransacions, 'EXPENSE'), label: new Date().getFullYear().toString() + ' EXPENSE' });
     });
   }
 
@@ -73,7 +64,7 @@ export class ViewTransactionbyMonthlyPage implements OnInit {
   }
 
   toggleChart() {
-    this.lineChartType = (this.lineChartType === 'line') ? 'bar' : 'line';
+    this.chartType = (this.chartType === 'line') ? 'bar' : 'line';
   }
 
   chartHovered(event) {
@@ -106,7 +97,7 @@ export class ViewTransactionbyMonthlyPage implements OnInit {
         this.overallExpenseTransactionAmount = this.overallExpenseTransactionAmount + Number(x.amount);
       } else {
         this.overallIncomeTransactionAmount = this.overallIncomeTransactionAmount + Number(x.amount);
-        this.lineChartLabels.push(x.month);
+        this.chartLabels.push(x.month);
       }
     });
     return arrayItems;
